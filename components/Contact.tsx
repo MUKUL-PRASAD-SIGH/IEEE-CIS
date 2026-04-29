@@ -75,7 +75,7 @@ export default function Contact() {
             Contact <span className="gradient-text">IEEE CIS Blr</span>
           </h2>
           <p className="text-ieee-gray-text text-lg leading-relaxed max-w-2xl mx-auto">
-            Have a question, want to collaborate, or interested in joining? We'd love to hear from you.
+            Have a question, want to collaborate, or interested in joining? We&apos;d love to hear from you.
           </p>
         </div>
 
@@ -147,7 +147,7 @@ export default function Contact() {
                 <div className="relative z-10">
                   <p className="font-display font-bold text-white mb-2">IEEE Global Resources</p>
                   <p className="text-blue-100 text-sm mb-4">
-                    Access IEEE's vast library of publications, conferences, and standards.
+                    Access IEEE&apos;s vast library of publications, conferences, and standards.
                   </p>
                   <a
                     href="https://www.ieee.org"
@@ -174,7 +174,7 @@ export default function Contact() {
                   </div>
                   <h4 className="font-display font-bold text-ieee-text-dark">Message Sent!</h4>
                   <p className="text-ieee-gray-text text-sm max-w-xs">
-                    Thank you for reaching out. We'll get back to you within 48 hours.
+                    Thank you for reaching out. We&apos;ll get back to you within 48 hours.
                   </p>
                 </div>
               ) : (

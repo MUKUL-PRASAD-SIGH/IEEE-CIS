@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { Calendar, MapPin, Clock, ChevronRight, Tag } from 'lucide-react'
+import { Calendar, MapPin, Clock, ChevronRight } from 'lucide-react'
 
 type EventCategory = 'All' | 'Workshop' | 'Talk' | 'Hackathon' | 'Seminar' | 'Competition'
 
@@ -120,7 +120,7 @@ export default function Events() {
             Events & Activities
           </span>
           <h2 className="font-display text-4xl sm:text-5xl font-black text-ieee-text-dark mb-5">
-            What's <span className="gradient-text">Happening</span>
+            What&apos;s <span className="gradient-text">Happening</span>
           </h2>
           <p className="text-ieee-gray-text text-lg leading-relaxed max-w-2xl mx-auto">
             From deep learning bootcamps to research competitions — explore our rich calendar of 
