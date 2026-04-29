@@ -35,7 +35,7 @@ export default function StudentChapters() {
   }, [])
 
   return (
-    <section id="chapters" className="section-padding bg-white" ref={sectionRef}>
+    <section id="chapters" className="section-padding bg-transparent" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12 animate-on-scroll">
@@ -53,7 +53,7 @@ export default function StudentChapters() {
           {chapters.map((chapter, index) => (
             <div
               key={index}
-              className="flex items-center gap-4 p-5 rounded-lg bg-[#F5F7F9] hover:bg-ieee-gray-mid transition-colors duration-200 border border-transparent hover:border-ieee-gray-mid/50 shadow-sm"
+              className="flex items-center gap-4 p-5 glass-card transition-all duration-300"
             >
               <div className="w-8 h-8 rounded shrink-0 flex items-center justify-center border border-[#00A9E0] text-[#00A9E0] font-semibold text-sm bg-white">
                 {index + 1}

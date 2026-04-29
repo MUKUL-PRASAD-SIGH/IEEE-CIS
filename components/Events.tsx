@@ -112,7 +112,7 @@ export default function Events() {
   const filtered = activeCategory === 'All' ? events : events.filter((e) => e.category === activeCategory)
 
   return (
-    <section id="events" className="section-padding bg-ieee-gray-soft" ref={sectionRef}>
+    <section id="events" className="section-padding bg-transparent" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12 animate-on-scroll">
@@ -198,38 +198,32 @@ export default function Events() {
             .map((event, i) => (
               <div
                 key={event.id}
-                className="animate-on-scroll card-hover bg-white rounded-2xl overflow-hidden border border-ieee-gray-mid shadow-card group cursor-pointer"
-                style={{ transitionDelay: `${i * 0.08}s` }}
+                className="glass-card p-6 animate-on-scroll cursor-pointer"
+                style={{ transitionDelay: `${0.1 * i}s` }}
               >
-                {/* Color bar */}
-                <div className={`h-1.5 w-full bg-gradient-to-r ${event.color}`} />
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <span
-                      className={`px-2.5 py-1 rounded-full text-xs font-semibold ${categoryColors[event.category]}`}
-                    >
-                      {event.category}
-                    </span>
+                <div className="flex items-start justify-between mb-4">
+                  <span
+                    className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                      categoryColors[event.category]
+                    }`}
+                  >
+                    {event.category}
+                  </span>
+                </div>
+                <h3 className="font-display text-lg font-bold text-ieee-text-dark mb-2 line-clamp-2">
+                  {event.title}
+                </h3>
+                <p className="text-ieee-gray-text text-sm mb-4 line-clamp-2">
+                  {event.description}
+                </p>
+                <div className="space-y-2 mt-auto">
+                  <div className="flex items-center gap-2 text-ieee-gray-text text-sm">
+                    <Calendar size={14} className="text-ieee-blue" />
+                    <span>{event.date}</span>
                   </div>
-                  <h3 className="font-display font-bold text-ieee-text-dark mb-2 group-hover:text-ieee-blue transition-colors duration-200">
-                    {event.title}
-                  </h3>
-                  <p className="text-ieee-gray-text text-sm leading-relaxed mb-5 line-clamp-2">
-                    {event.description}
-                  </p>
-                  <div className="space-y-1.5 text-xs text-ieee-gray-text">
-                    <div className="flex items-center gap-2">
-                      <Calendar size={12} className="text-ieee-blue shrink-0" />
-                      {event.date}
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Clock size={12} className="text-ieee-blue shrink-0" />
-                      {event.time}
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <MapPin size={12} className="text-ieee-blue shrink-0" />
-                      {event.location}
-                    </div>
+                  <div className="flex items-center gap-2 text-ieee-gray-text text-sm">
+                    <MapPin size={14} className="text-ieee-blue" />
+                    <span className="truncate">{event.location}</span>
                   </div>
                 </div>
               </div>

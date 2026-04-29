@@ -63,7 +63,7 @@ export default function Navbar() {
           {/* Logo replacement */}
           <div className="relative h-10 w-32 flex items-center justify-center">
             <Image
-              src="/cis-logo.webp"
+              src={isScrolled ? "/cis-logo.webp" : "/CISLogoWhite.png"}
               alt="IEEE CIS"
               fill
               className="object-contain transition-all"

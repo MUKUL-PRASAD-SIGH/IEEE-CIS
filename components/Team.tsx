@@ -130,9 +130,9 @@ const roleColors: Record<Role, string> = {
 
 function MemberCard({ member }: { member: TeamMember }) {
   return (
-    <div className="card-hover group bg-white rounded-2xl overflow-hidden border border-ieee-gray-mid shadow-card">
+    <div className="glass-card overflow-hidden group transition-all duration-300 hover:-translate-y-2">
       {/* Gradient header */}
-      <div className={`h-24 bg-gradient-to-br ${member.color} relative`}>
+      <div className={`h-24 bg-gradient-to-br ${member.color} relative opacity-80 backdrop-blur-sm`}>
         <div className="absolute inset-0 hero-grid opacity-10" />
         {/* Avatar */}
         <div className="absolute -bottom-8 left-6">
@@ -203,7 +203,7 @@ export default function Team() {
   }, [])
 
   return (
-    <section id="team" className="section-padding bg-white" ref={sectionRef}>
+    <section id="team" className="section-padding bg-transparent" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16 animate-on-scroll">
