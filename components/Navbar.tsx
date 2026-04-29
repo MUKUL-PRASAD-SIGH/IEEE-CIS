@@ -1,13 +1,14 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import Image from 'next/image'
+import { Menu, X } from 'lucide-react'
 
 const navItems = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Events', href: '#events' },
+  { label: 'Student Chapters', href: '#chapters' },
   { label: 'Team', href: '#team' },
   { label: 'Contact', href: '#contact' },
 ]
@@ -21,7 +22,7 @@ export default function Navbar() {
     const onScroll = () => {
       setIsScrolled(window.scrollY > 20)
 
-      const sections = ['home', 'about', 'events', 'team', 'contact']
+      const sections = ['home', 'about', 'events', 'chapters', 'team', 'contact']
       const current = sections.find((id) => {
         const el = document.getElementById(id)
         if (!el) return false
@@ -48,7 +49,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-nav border-b border-ieee-gray-mid'
+          ? 'bg-white/70 backdrop-blur-lg shadow-nav border-b border-ieee-gray-mid/50'
           : 'bg-transparent'
       }`}
     >
@@ -59,14 +60,17 @@ export default function Navbar() {
           className="flex items-center gap-3 group"
           aria-label="IEEE CIS Bangalore - Home"
         >
-          <div className="w-10 h-10 rounded-xl bg-ieee-gradient flex items-center justify-center shadow-md group-hover:shadow-glow transition-shadow duration-300">
-            <span className="text-white font-display font-black text-sm leading-none">CIS</span>
+          {/* Logo replacement */}
+          <div className="relative h-10 w-32 flex items-center justify-center">
+            <Image
+              src="/cis-logo.webp"
+              alt="IEEE CIS"
+              fill
+              className="object-contain transition-all"
+            />
           </div>
-          <div className="hidden sm:block">
+          <div className="hidden sm:block text-left">
             <p className={`font-display font-bold text-sm leading-tight transition-colors duration-300 ${isScrolled ? 'text-ieee-blue-dark' : 'text-white'}`}>
-              IEEE CIS
-            </p>
-            <p className={`text-xs font-medium leading-tight transition-colors duration-300 ${isScrolled ? 'text-ieee-gray-text' : 'text-blue-100'}`}>
               Bangalore Chapter
             </p>
           </div>

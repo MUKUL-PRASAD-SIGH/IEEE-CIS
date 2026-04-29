@@ -184,10 +184,10 @@ export default function Hero() {
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="glass-card rounded-2xl px-5 py-4 bg-white/10 border border-white/20 backdrop-blur-sm"
+                className="rounded-2xl px-5 py-4 bg-white/10 border border-white/20 backdrop-blur-md shadow-lg"
               >
                 <p className="font-display font-black text-3xl text-white mb-0.5">{stat.value}</p>
-                <p className="text-blue-200 text-sm font-medium">{stat.label}</p>
+                <p className="text-blue-100 text-sm font-medium">{stat.label}</p>
               </div>
             ))}
           </div>
