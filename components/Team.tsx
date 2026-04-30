@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 import { Link2, Mail } from 'lucide-react'
 
 type Role = 'Chair' | 'Vice Chair' | 'Secretary' | 'Treasurer' | 'Webmaster' | 'Member'
@@ -9,114 +10,229 @@ interface TeamMember {
   name: string
   designation: string
   role: Role
-  department: string
+  department?: string
   college: string
   initials: string
   color: string
   profileUrl?: string
   email?: string
+  image?: string
 }
-
-const execom: TeamMember[] = [
-  {
-    name: 'Dr. Rajesh Kumar',
-    designation: 'Chapter Chair',
-    role: 'Chair',
-    department: 'Dept. of CSE',
-    college: 'IISc Bangalore',
-    initials: 'RK',
-    color: 'from-blue-600 to-blue-800',
-    email: 'chair@ieee-cis-blr.org',
-  },
-  {
-    name: 'Dr. Priya Sharma',
-    designation: 'Vice Chair',
-    role: 'Vice Chair',
-    department: 'Dept. of ECE',
-    college: 'RVCE Bangalore',
-    initials: 'PS',
-    color: 'from-cyan-600 to-blue-700',
-    profileUrl: '#',
-  },
-  {
-    name: 'Arjun Menon',
-    designation: 'Secretary',
-    role: 'Secretary',
-    department: 'Dept. of AI/ML',
-    college: 'MSRIT Bangalore',
-    initials: 'AM',
-    color: 'from-blue-500 to-indigo-700',
-    profileUrl: '#',
-  },
-  {
-    name: 'Sneha Patel',
-    designation: 'Treasurer',
-    role: 'Treasurer',
-    department: 'Dept. of IS',
-    college: 'BMS College Bangalore',
-    initials: 'SP',
-    color: 'from-indigo-600 to-blue-800',
-    profileUrl: '#',
-  },
-  {
-    name: 'Karthik Rao',
-    designation: 'Webmaster',
-    role: 'Webmaster',
-    department: 'Dept. of CSE',
-    college: 'PESCE Mandya',
-    initials: 'KR',
-    color: 'from-sky-500 to-blue-700',
-    profileUrl: '#',
-  },
-  {
-    name: 'Meera Nair',
-    designation: 'Events Coordinator',
-    role: 'Member',
-    department: 'Dept. of ECE',
-    college: 'NIE Mysore',
-    initials: 'MN',
-    color: 'from-blue-400 to-blue-700',
-    profileUrl: '#',
-  },
-]
 
 const coreTeam: TeamMember[] = [
   {
-    name: 'Rahul Singh',
-    designation: 'Technical Lead',
-    role: 'Member',
-    department: 'CSE',
-    college: 'RVCE',
-    initials: 'RS',
+    name: 'Dr Sumana Maradithaya',
+    designation: 'Chair',
+    role: 'Chair',
+    college: 'CORE COMMITTEE - 2026',
+    initials: 'SM',
     color: 'from-blue-600 to-blue-800',
+    image: '/team/core_0.png'
   },
   {
-    name: 'Anjali Verma',
-    designation: 'Research Coordinator',
-    role: 'Member',
-    department: 'AI/ML',
-    college: 'IISc',
-    initials: 'AV',
+    name: 'Dr Megha Arakeri',
+    designation: 'Vice Chair',
+    role: 'Vice Chair',
+    college: 'CORE COMMITTEE - 2026',
+    initials: 'MA',
     color: 'from-cyan-700 to-blue-600',
+    image: '/team/core_1.png'
   },
   {
-    name: 'Deepak Nair',
-    designation: 'Outreach Lead',
-    role: 'Member',
-    department: 'ECE',
-    college: 'MSRIT',
-    initials: 'DN',
+    name: 'Dr. Manjunath Kounte',
+    designation: 'Secretary',
+    role: 'Secretary',
+    college: 'CORE COMMITTEE - 2026',
+    initials: 'MK',
     color: 'from-indigo-600 to-blue-700',
+    image: '/team/core_2.png'
   },
   {
-    name: 'Kavitha Reddy',
-    designation: 'Workshop Lead',
-    role: 'Member',
-    department: 'CSE',
-    college: 'BMS College',
-    initials: 'KR',
+    name: 'Dr Kumaresh Sheelavat',
+    designation: 'Joint Secretary',
+    role: 'Secretary',
+    college: 'CORE COMMITTEE - 2026',
+    initials: 'KS',
     color: 'from-blue-700 to-sky-500',
+    image: '/team/core_3.png'
   },
+  {
+    name: 'Dr Anitha P',
+    designation: 'Treasurer',
+    role: 'Treasurer',
+    college: 'CORE COMMITTEE - 2026',
+    initials: 'AP',
+    color: 'from-sky-600 to-indigo-600',
+    image: '/team/core_4.png'
+  }
+]
+
+const pastChairs: TeamMember[] = [
+  {
+    name: 'Dr Y V S Lakshmi',
+    designation: 'Chair (2014-16)',
+    role: 'Chair',
+    college: 'Past Chair',
+    initials: 'YL',
+    color: 'from-gray-500 to-gray-700',
+    image: '/team/past_0.png'
+  },
+  {
+    name: 'Anandi Giridharan',
+    designation: 'Chair (2016-18)',
+    role: 'Chair',
+    college: 'Past Chair',
+    initials: 'AG',
+    color: 'from-gray-500 to-gray-700',
+    image: '/team/past_1.png'
+  },
+  {
+    name: 'Dr Vijaya Kumar B P',
+    designation: 'Chair (2018-22)',
+    role: 'Chair',
+    college: 'Past Chair',
+    initials: 'VK',
+    color: 'from-gray-500 to-gray-700',
+    image: '/team/past_2.png'
+  }
+]
+
+const execom: TeamMember[] = [
+  {
+    name: 'Dr. Kusuma S. M.',
+    designation: 'Execom Member',
+    role: 'Member',
+    college: 'M S Ramaiah Institute of Technology',
+    initials: 'KS',
+    color: 'from-blue-600 to-blue-800',
+    image: '/team/execom_0.png'
+  },
+  {
+    name: 'Dr. Sanjay M Belgaonkar',
+    designation: 'Execom Member',
+    role: 'Member',
+    college: 'BMSIT&M',
+    initials: 'SB',
+    color: 'from-cyan-600 to-blue-700',
+    image: '/team/execom_1.png'
+  },
+  {
+    name: 'Dr. Nagarathna C R',
+    designation: 'Execom Member',
+    role: 'Member',
+    college: 'B N M Institute of Technology',
+    initials: 'NR',
+    color: 'from-blue-500 to-indigo-700',
+    image: '/team/execom_2.png'
+  },
+  {
+    name: 'Nishanth Krishna',
+    designation: 'Executive Director',
+    role: 'Member',
+    college: 'Visiminds Technologies',
+    initials: 'NK',
+    color: 'from-indigo-600 to-blue-800',
+    image: '/team/execom_3.png'
+  },
+  {
+    name: 'Dr. Manju Khanna',
+    designation: 'Execom Member',
+    role: 'Member',
+    college: 'Amritha College of Engineering',
+    initials: 'MK',
+    color: 'from-sky-500 to-blue-700',
+    image: '/team/execom_4.png'
+  },
+  {
+    name: 'Dr. Piyush Kumar Pareek',
+    designation: 'Execom Member',
+    role: 'Member',
+    college: 'NMIT',
+    initials: 'PP',
+    color: 'from-blue-400 to-blue-700',
+    image: '/team/execom_5.png'
+  },
+  {
+    name: 'Nibras Ahmed',
+    designation: 'Execom Member',
+    role: 'Member',
+    college: 'Intel Technologies',
+    initials: 'NA',
+    color: 'from-blue-600 to-blue-800',
+    image: '/team/execom_6.png'
+  },
+  {
+    name: 'Mohammed Ameen',
+    designation: 'Execom Member',
+    role: 'Member',
+    college: 'Cisco',
+    initials: 'MA',
+    color: 'from-cyan-700 to-blue-600',
+    image: '/team/execom_7.png'
+  },
+  {
+    name: 'Dr Venkataswamy R',
+    designation: 'Execom Member',
+    role: 'Member',
+    college: 'Christ University',
+    initials: 'VR',
+    color: 'from-indigo-600 to-blue-700',
+    image: '/team/execom_8.png'
+  },
+  {
+    name: 'Dr Tabassum Ara',
+    designation: 'Execom Member',
+    role: 'Member',
+    college: 'HKBK College of Engineering',
+    initials: 'TA',
+    color: 'from-blue-700 to-sky-500',
+    image: '/team/execom_9.png'
+  },
+  {
+    name: 'Dr Helen Joy',
+    designation: 'Execom Member',
+    role: 'Member',
+    college: 'Christ University',
+    initials: 'HJ',
+    color: 'from-sky-600 to-indigo-600',
+    image: '/team/execom_10.png'
+  },
+  {
+    name: 'Dr Soumyalatha Naveen',
+    designation: 'Execom Member',
+    role: 'Member',
+    college: 'Manipal Institute of Technology',
+    initials: 'SN',
+    color: 'from-blue-600 to-blue-800',
+    image: '/team/execom_11.png'
+  },
+  {
+    name: 'Dr Kiran Kataraki',
+    designation: 'Execom Member',
+    role: 'Member',
+    college: 'Neudesic Technologies',
+    initials: 'KK',
+    color: 'from-cyan-600 to-blue-700',
+    image: '/team/execom_12.png'
+  },
+  {
+    name: 'Dr N Kavitha',
+    designation: 'Execom Member',
+    role: 'Member',
+    college: 'REVA University',
+    initials: 'NK',
+    color: 'from-blue-500 to-indigo-700',
+    image: '/team/execom_13.png'
+  },
+  {
+    name: 'Dr Renuka Tali',
+    designation: 'Execom Member',
+    role: 'Member',
+    college: 'K. S. School of Engineering & Management',
+    initials: 'RT',
+    color: 'from-indigo-600 to-blue-800',
+    image: '/team/execom_14.png'
+  }
 ]
 
 const roleColors: Record<Role, string> = {
@@ -130,16 +246,20 @@ const roleColors: Record<Role, string> = {
 
 function MemberCard({ member }: { member: TeamMember }) {
   return (
-    <div className="glass-card overflow-hidden group transition-all duration-300 hover:-translate-y-2">
+    <div className="glass-card overflow-hidden group transition-all duration-300 hover:-translate-y-2 h-full flex flex-col">
       {/* Gradient header */}
       <div className={`h-24 bg-gradient-to-br ${member.color} relative opacity-80 backdrop-blur-sm`}>
         <div className="absolute inset-0 hero-grid opacity-10" />
         {/* Avatar */}
         <div className="absolute -bottom-8 left-6">
           <div
-            className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${member.color} border-4 border-white shadow-lg flex items-center justify-center`}
+            className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${member.color} border-4 border-white shadow-lg flex items-center justify-center overflow-hidden relative`}
           >
-            <span className="font-display font-black text-white text-lg">{member.initials}</span>
+            {member.image ? (
+              <Image src={member.image} alt={member.name} fill className="object-cover" />
+            ) : (
+              <span className="font-display font-black text-white text-lg">{member.initials}</span>
+            )}
           </div>
         </div>
         {/* Role badge */}
@@ -150,17 +270,17 @@ function MemberCard({ member }: { member: TeamMember }) {
         </div>
       </div>
 
-      <div className="pt-10 pb-5 px-6">
+      <div className="pt-10 pb-5 px-6 flex-1 flex flex-col">
         <h3 className="font-display font-bold text-ieee-text-dark group-hover:text-ieee-blue transition-colors duration-200 text-base">
           {member.name}
         </h3>
         <p className="text-ieee-blue text-sm font-medium mb-1">{member.designation}</p>
-        <p className="text-ieee-gray-text text-xs mb-4">
-          {member.department} · {member.college}
+        <p className="text-ieee-gray-text text-xs mb-4 flex-1">
+          {member.department ? `${member.department} · ` : ''}{member.college}
         </p>
 
         {/* Social links */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 mt-auto pt-2">
           {member.profileUrl && (
             <a
               href={member.profileUrl}
@@ -214,35 +334,60 @@ export default function Team() {
             Meet the <span className="gradient-text">Executive Committee</span>
           </h2>
           <p className="text-ieee-gray-text text-lg leading-relaxed max-w-2xl mx-auto">
-            Dedicated professionals and students driving IEEE CIS Bangalore forward through research, events, and community building.
+            Dedicated professionals driving IEEE CIS Bangalore forward through research, events, and community building.
           </p>
         </div>
 
-        {/* ExecCom Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {execom.map((member, i) => (
-            <div
-              key={member.name}
-              className="animate-on-scroll"
-              style={{ transitionDelay: `${i * 0.08}s` }}
-            >
-              <MemberCard member={member} />
-            </div>
-          ))}
-        </div>
-
         {/* Core Team */}
-        <div className="animate-on-scroll" style={{ transitionDelay: '0.2s' }}>
+        <div className="animate-on-scroll" style={{ transitionDelay: '0.1s' }}>
           <div className="flex items-center gap-4 mb-8">
-            <h3 className="font-display text-2xl font-bold text-ieee-text-dark">Core Team</h3>
+            <h3 className="font-display text-2xl font-bold text-ieee-text-dark">Core Committee - 2026</h3>
             <div className="flex-1 h-px bg-ieee-gray-mid" />
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-5 mb-16">
             {coreTeam.map((member, i) => (
               <div
                 key={member.name}
                 className="animate-on-scroll"
-                style={{ transitionDelay: `${0.24 + i * 0.07}s` }}
+                style={{ transitionDelay: `${0.1 + i * 0.05}s` }}
+              >
+                <MemberCard member={member} />
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        {/* Past Chairs */}
+        <div className="animate-on-scroll" style={{ transitionDelay: '0.2s' }}>
+          <div className="flex items-center gap-4 mb-8">
+            <h3 className="font-display text-2xl font-bold text-ieee-text-dark">Past Chairs</h3>
+            <div className="flex-1 h-px bg-ieee-gray-mid" />
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5 mb-16">
+            {pastChairs.map((member, i) => (
+              <div
+                key={member.name}
+                className="animate-on-scroll"
+                style={{ transitionDelay: `${0.2 + i * 0.05}s` }}
+              >
+                <MemberCard member={member} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ExecCom Grid */}
+        <div className="animate-on-scroll" style={{ transitionDelay: '0.3s' }}>
+          <div className="flex items-center gap-4 mb-8">
+            <h3 className="font-display text-2xl font-bold text-ieee-text-dark">Execom Members</h3>
+            <div className="flex-1 h-px bg-ieee-gray-mid" />
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-16">
+            {execom.map((member, i) => (
+              <div
+                key={member.name}
+                className="animate-on-scroll"
+                style={{ transitionDelay: `${0.3 + i * 0.05}s` }}
               >
                 <MemberCard member={member} />
               </div>
