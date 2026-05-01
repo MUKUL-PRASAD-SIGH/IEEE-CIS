@@ -133,6 +133,7 @@ export default function Events() {
           {categories.map((cat) => (
             <button
               key={cat}
+              suppressHydrationWarning
               onClick={() => setActiveCategory(cat)}
               className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
                 activeCategory === cat
