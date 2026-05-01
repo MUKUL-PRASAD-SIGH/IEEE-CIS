@@ -64,7 +64,7 @@ export default function Contact() {
     'w-full px-4 py-3 rounded-xl border border-ieee-gray-mid bg-white text-ieee-text-dark text-sm placeholder-ieee-gray-text focus:outline-none focus:border-ieee-blue focus:ring-2 focus:ring-ieee-blue/10 transition-all duration-200'
 
   return (
-    <section id="contact" className="section-padding bg-ieee-gray-soft" ref={sectionRef}>
+    <section id="contact" className="section-padding bg-transparent" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16 animate-on-scroll">
@@ -83,7 +83,7 @@ export default function Contact() {
           {/* Left: Info */}
           <div className="lg:col-span-2 space-y-6 animate-on-scroll">
             {/* Contact details */}
-            <div className="bg-white rounded-2xl p-7 border border-ieee-gray-mid shadow-card space-y-5">
+            <div className="glass-card p-7 space-y-5">
               {contactInfo.map((info) => {
                 const Icon = info.icon
                 return (
@@ -114,7 +114,7 @@ export default function Contact() {
             </div>
 
             {/* Social links */}
-            <div className="bg-white rounded-2xl p-7 border border-ieee-gray-mid shadow-card">
+            <div className="glass-card p-7">
               <h3 className="font-display font-bold text-ieee-text-dark mb-4">Follow Us</h3>
               <div className="flex flex-col gap-3">
                 {socials.map((s) => {
@@ -164,7 +164,7 @@ export default function Contact() {
 
           {/* Right: Form */}
           <div className="lg:col-span-3 animate-on-scroll" style={{ transitionDelay: '0.15s' }}>
-            <div className="bg-white rounded-2xl p-8 border border-ieee-gray-mid shadow-card">
+            <div className="glass-card p-8">
               <h3 className="font-display text-xl font-bold text-ieee-text-dark mb-6">Send a Message</h3>
 
               {status === 'success' ? (
@@ -192,6 +192,7 @@ export default function Contact() {
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
                         placeholder="Your full name"
                         className={inputClass}
+                        suppressHydrationWarning
                       />
                     </div>
                     <div>
@@ -206,6 +207,7 @@ export default function Contact() {
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
                         placeholder="your@email.com"
                         className={inputClass}
+                        suppressHydrationWarning
                       />
                     </div>
                   </div>
@@ -222,6 +224,7 @@ export default function Contact() {
                       onChange={(e) => setForm({ ...form, subject: e.target.value })}
                       placeholder="What's this about?"
                       className={inputClass}
+                      suppressHydrationWarning
                     />
                   </div>
 
@@ -244,6 +247,7 @@ export default function Contact() {
                     type="submit"
                     disabled={status === 'submitting'}
                     className="w-full flex items-center justify-center gap-2.5 py-3.5 rounded-xl bg-ieee-blue text-white font-semibold text-sm hover:bg-ieee-blue-dark disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-200 shadow-md hover:shadow-lg"
+                    suppressHydrationWarning
                   >
                     {status === 'submitting' ? (
                       <>

@@ -55,7 +55,7 @@ export default function Hero() {
 
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(200, 228, 245, ${p.opacity})`
+        ctx.fillStyle = `rgba(200, 228, 245, ${p.opacity})` // Subtle opacity for better background feel
         ctx.fill()
       })
 
@@ -65,12 +65,12 @@ export default function Hero() {
           const dx = a.x - b.x
           const dy = a.y - b.y
           const dist = Math.sqrt(dx * dx + dy * dy)
-          if (dist < 100) {
+          if (dist < 120) {
             ctx.beginPath()
             ctx.moveTo(a.x, a.y)
             ctx.lineTo(b.x, b.y)
-            ctx.strokeStyle = `rgba(200, 228, 245, ${0.15 * (1 - dist / 100)})`
-            ctx.lineWidth = 0.5
+            ctx.strokeStyle = `rgba(200, 228, 245, ${0.2 * (1 - dist / 120)})` // Lower connection opacity
+            ctx.lineWidth = 0.35 // Decreased line width to prevent stick-like appearance
             ctx.stroke()
           }
         })

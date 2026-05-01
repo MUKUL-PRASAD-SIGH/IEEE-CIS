@@ -1,14 +1,16 @@
 'use client'
 
+import Link from 'next/link'
 import { Link2, Mail, ExternalLink, Globe } from 'lucide-react'
 
 const footerLinks = {
   'Quick Links': [
-    { label: 'Home', href: '#home' },
-    { label: 'About IEEE CIS', href: '#about' },
-    { label: 'Events', href: '#events' },
-    { label: 'Team', href: '#team' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: '/#home' },
+    { label: 'About IEEE CIS', href: '/#about' },
+    { label: 'Events', href: '/#events' },
+    { label: 'Team', href: '/#team' },
+    { label: 'Gallery', href: '/gallery' },
+    { label: 'Contact', href: '/#contact' },
   ],
   'IEEE Resources': [
     { label: 'IEEE.org', href: 'https://www.ieee.org', external: true },
@@ -24,17 +26,6 @@ const socials = [
   { icon: Globe, href: '#', label: 'Website' },
   { icon: Mail, href: 'mailto:ieee.cis.blr@gmail.com', label: 'Email' },
 ]
-
-function handleScrollTo(href: string) {
-  if (typeof window === 'undefined') return
-  if (href.startsWith('#')) {
-    const el = document.getElementById(href.slice(1))
-    if (el) {
-      const top = el.getBoundingClientRect().top + window.scrollY - 72
-      window.scrollTo({ top, behavior: 'smooth' })
-    }
-  }
-}
 
 export default function Footer() {
   return (
@@ -92,12 +83,12 @@ export default function Footer() {
                         <ExternalLink size={11} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                       </a>
                     ) : (
-                      <button
-                        onClick={() => handleScrollTo(link.href)}
-                        className="text-blue-300 hover:text-white text-sm transition-colors duration-200 text-left"
+                      <Link
+                        href={link.href}
+                        className="text-blue-300 hover:text-white text-sm transition-colors duration-200 text-left block"
                       >
                         {link.label}
-                      </button>
+                      </Link>
                     )}
                   </li>
                 ))}
@@ -110,7 +101,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-blue-300 text-sm">
+          <p className="text-blue-300 text-sm" suppressHydrationWarning>
             © {new Date().getFullYear()} IEEE CIS Bangalore Chapter. All rights reserved.
           </p>
           <div className="flex items-center gap-1 text-blue-400 text-xs">
