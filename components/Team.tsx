@@ -256,7 +256,7 @@ function MemberCard({ member }: { member: TeamMember }) {
             className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${member.color} border-4 border-white shadow-lg flex items-center justify-center overflow-hidden relative`}
           >
             {member.image ? (
-              <Image src={member.image} alt={member.name} fill className="object-cover" />
+              <Image src={member.image} alt={member.name} fill sizes="64px" className="object-cover" />
             ) : (
               <span className="font-display font-black text-white text-lg">{member.initials}</span>
             )}
@@ -356,7 +356,7 @@ export default function Team() {
             ))}
           </div>
         </div>
-        
+
         {/* Past Chairs */}
         <div className="animate-on-scroll" style={{ transitionDelay: '0.2s' }}>
           <div className="flex items-center gap-4 mb-8">

@@ -192,6 +192,7 @@ export default function Contact() {
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
                         placeholder="Your full name"
                         className={inputClass}
+                        suppressHydrationWarning
                       />
                     </div>
                     <div>
@@ -206,6 +207,7 @@ export default function Contact() {
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
                         placeholder="your@email.com"
                         className={inputClass}
+                        suppressHydrationWarning
                       />
                     </div>
                   </div>
@@ -222,6 +224,7 @@ export default function Contact() {
                       onChange={(e) => setForm({ ...form, subject: e.target.value })}
                       placeholder="What's this about?"
                       className={inputClass}
+                      suppressHydrationWarning
                     />
                   </div>
 
@@ -244,6 +247,7 @@ export default function Contact() {
                     type="submit"
                     disabled={status === 'submitting'}
                     className="w-full flex items-center justify-center gap-2.5 py-3.5 rounded-xl bg-ieee-blue text-white font-semibold text-sm hover:bg-ieee-blue-dark disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-200 shadow-md hover:shadow-lg"
+                    suppressHydrationWarning
                   >
                     {status === 'submitting' ? (
                       <>

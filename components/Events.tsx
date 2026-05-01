@@ -182,7 +182,7 @@ export default function Events() {
                         <span>{event.location}</span>
                       </div>
                     </div>
-                    <button className="mt-5 inline-flex items-center gap-1.5 text-white font-semibold text-sm hover:gap-3 transition-all duration-200">
+                    <button suppressHydrationWarning className="mt-5 inline-flex items-center gap-1.5 text-white font-semibold text-sm hover:gap-3 transition-all duration-200">
                       Learn more <ChevronRight size={16} />
                     </button>
                   </div>
