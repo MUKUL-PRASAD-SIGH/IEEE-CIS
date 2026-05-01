@@ -1,7 +1,7 @@
 import cv2
 import os
 import glob
-
+#Code for images
 # The 3 images
 img_core = r"C:\Users\ASUS\.gemini\antigravity\brain\15b35791-6115-43f3-9595-ed69165835cc\media__1777571680695.png"
 img_past = r"C:\Users\ASUS\.gemini\antigravity\brain\15b35791-6115-43f3-9595-ed69165835cc\media__1777571704093.png"
