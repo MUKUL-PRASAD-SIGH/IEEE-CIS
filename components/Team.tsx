@@ -30,15 +30,6 @@ const coreCommittee: TeamMember[] = [
     image: '/team/core_0.png'
   },
   {
-    name: 'Dr Megha Arakeri',
-    designation: 'Vice Chair',
-    role: 'Vice Chair',
-    college: 'CORE COMMITTEE - 2026',
-    initials: 'MA',
-    color: 'from-cyan-700 to-blue-600',
-    image: '/team/core_1.png'
-  },
-  {
     name: 'Dr. Manjunath Kounte',
     designation: 'Secretary',
     role: 'Secretary',
@@ -94,25 +85,16 @@ const pastChairs: TeamMember[] = [
     initials: 'VK',
     color: 'from-gray-500 to-gray-700',
     image: '/team/past_2.png'
-   }
-  // {
-  //   name: 'Dr Megha Arakeri',
-  //   designation: 'Chair (2022-24)',
-  //   role: 'Past Chair',
-  //   college: 'Past Chair',
-  //   initials: 'MA',
-  //   color: 'from-gray-500 to-gray-700',
-  //   image: '/team/past_3.png'
-  // },
-  // {
-  //   name: 'Dr Sumana Maradithaya',
-  //   designation: 'Chair (2024-26)',
-  //   role: 'Past Chair',
-  //   college: 'Past Chair',
-  //   initials: 'SM',
-  //   color: 'from-gray-500 to-gray-700',
-  //   image: '/team/past_4.png'
-  // }
+   },
+   {
+    name: 'Dr Megha Arakeri',
+    designation: 'Chair (2022-24)',
+    role: 'Past Chair',
+    college: 'Past Chair',
+    initials: 'MA',
+    color: 'from-cyan-700 to-blue-600',
+    image: '/team/core_1.png'
+  }
 ]
 
 const execom: TeamMember[] = [
